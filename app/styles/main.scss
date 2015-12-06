@@ -1,31 +1,128 @@
 // bower:scss
 // endbower
 
+$header-height: 100px;
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
 body {
   background: #fafafa;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
+  background: url("../images/bg.jpg");
+  background-size: cover;
+  padding: 0;
+  margin: 0;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+.clearfix {
+  content: ' ';
+  display: table;
+  clear: both;
+}
+
+@media only screen and (max-width: 1200px) {
+  .container-lg {
+    width: 960px;
   }
 }
 
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+.container-lg {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.header {
+  background: #666;
+  height: $header-height;
+  border-bottom: 7px solid #fff;
+  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1);
+  padding-top: 10px;
+
+  .logo-wrapper {
+    float: left;
+  }
+
+  .social-buttons {
+    float: right;
+
+    a.btn {
+      display: block;
+      float: left;
+      margin: 10px 15px 10px 10px;
+      background: whitesmoke;
+      border-radius: 50px;
+      height: 40px;
+      width: 40px;
+
+      &.vk {
+        background: cornflowerblue;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.main-block {
+  margin-top: 35px;
+
+  >div{
+    float: left;
+    min-height: 300px;
+    background: indianred;
+  }
+
+  &:after{
+    @extend .clearfix
+  }
+}
+
+.left-block {
+  width: 250px;
+}
+
+.right-block {
+  margin-left: 60px;
+  width: 650px;
+}
+
+footer {
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+
+  padding-top: 20px;
+}
+
+.footer-content {
+  &:after{
+    @extend .clearfix;
+  }
+
+  > div {
+    float: left;
+  }
+
+  .enter{
+    float: right;
+    margin-right: 25px;
+    text-decoration: none;
+    color: gray;
+  }
 }
